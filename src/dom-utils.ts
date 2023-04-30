@@ -1,0 +1,1 @@
+export const listContainer = document.querySelector("#listContainer") as HTMLOListElement;
