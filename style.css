@@ -120,12 +120,20 @@
   }
   
   h2 {
-    font-size: calc(
-      var(--base-fontsize) * var(--header-scale) * var(--header-scale) *
-        var(--header-scale)
-    );
+    font-size: calc(var(--base-fontsize) * var(--header-scale) * 1.5);
     margin-top: calc(var(--line-height) * 1.5rem);
+    background-color: rgb(243, 172, 30);
+    padding: 10px;
+    font-family: Helvetica;
   }
+  
+  @media only screen and (min-width: 768px) {
+    h2 {
+      font-size: calc(var(--base-fontsize) * var(--header-scale) * 1.7);
+      padding: 15px;
+    }
+  }
+  
   
   h3 {
     font-size: calc(
