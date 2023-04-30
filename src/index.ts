@@ -29,3 +29,12 @@ function renderList() {
     });
   }
   
+  
+function initApp() {
+  renderList();
+  addBtn.addEventListener("click", () => {
+    addEintrag();
+    renderList();
+  });
+}
+initApp();
