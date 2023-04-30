@@ -1,5 +1,5 @@
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
-import {listContainer, inputArtikel, inputMenge } from "./dom-utils";
+import {listContainer, inputArtikel, inputMenge, addBtn } from "./dom-utils";
 import { liste,addEintrag } from "./liste";
 
 
