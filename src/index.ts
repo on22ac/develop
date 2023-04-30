@@ -1,6 +1,6 @@
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
 import {listContainer, inputArtikel, inputMenge } from "./dom-utils";
-import { liste } from "./liste";
+import { liste,addEintrag } from "./liste";
 
 
 function renderList() {
@@ -28,16 +28,4 @@ function renderList() {
       }
     });
   }
-  function addEintrag() {
-    const artikel = inputArtikel.value;
-    const menge = inputMenge.value;
   
-    if (artikel && menge) {
-      liste.push({
-        artikel,
-        menge,
-      });
-    } else {
-      alert(`Bitte ausfüllen`);
-    }
-  }
