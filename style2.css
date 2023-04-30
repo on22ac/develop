@@ -43,14 +43,12 @@ html {
     background: #3498DB;
 }
 
-.column.column-done h2 {
-    background: #87cb69;
-}
-.column.column-ip h2 {
+
+.column.column-alreadydone h2 {
     background: #e893be;
 }
 
-.column.column-ip {
+.column.column-alreadydone {
     margin: 0 16px;
 }
 

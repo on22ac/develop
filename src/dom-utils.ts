@@ -5,3 +5,7 @@ export const addBtn = document.querySelector("#addBtn") as HTMLButtonElement;
 
 //const cards wählt alle HTML-Elemente aus, die der CSS-Klasse "card" entsprechen und speichert sie in einer Liste mit dem Namen "cards".
 const cards = document.querySelectorAll<HTMLElement>(".card");
+
+
+const containerTodo = document.querySelector(".column-todo") as HTMLDivElement;
+const containerAlreadydone = document.querySelector(".column-alreadydone") as HTMLDivElement;
