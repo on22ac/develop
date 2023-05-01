@@ -53,3 +53,7 @@ export interface DropEvent extends Event {
   dataTransfer: DragAndDropSystem;
   currentTarget: HTMLElement;
 }
+
+export interface DropTarget {
+  removeDropClass(): void;
+}
