@@ -1,5 +1,5 @@
-import { DragTarget } from "./interface";
-
+import { DragTarget, DragAndDropSystem } from "./interface";
+import { containerAlreadydone, containerTodo, cards } from "./dom-utils";
 
 // fügt einem Element eine CSS-Klasse namens "dragging" hinzu, 
 //um es als gezogenes Element zu kennzeichnen.
@@ -65,4 +65,14 @@ const dragLeave = (event: DragEvent): void => {
   const allowDrop = (event: Event): void => {
     event.preventDefault();
   };
+  
+  export function addEvents() {
+    containerAlreadydone.addEventListener("drop", drop);
+    containerAlreadydone.addEventListener("dragover", allowDrop);
+    containerTodo.addEventListener("drop", drop);
+    containerTodo.addEventListener("dragover", allowDrop);
+    cards.forEach((card: HTMLElement) =>
+      card.addEventListener("dragstart", drag)
+    );
+  }
   

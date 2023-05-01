@@ -1,7 +1,7 @@
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
-import {listContainer, inputArtikel, inputMenge, addBtn } from "./dom-utils";
+import {listContainer,cards, inputArtikel, inputMenge, addBtn } from "./dom-utils";
 import { liste,addEintrag } from "./liste";
-
+import { addEvents } from "./dragandrop";
 
 function renderList() {
     listContainer.innerHTML = ``;
@@ -31,6 +31,7 @@ function renderList() {
   
   
 function initApp() {
+  addEvents();
   renderList();
   addBtn.addEventListener("click", () => {
     addEintrag();
