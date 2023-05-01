@@ -12,4 +12,12 @@ const dragStart = (target: DragTarget): void => {
 const dragEnd = (target: DragTarget): void => {
     target.removeClass("dragging");
   };
+
+  const dragEnter = (event: DragEvent): void => {
+    (event.currentTarget as HTMLElement).classList.add("drop");
+  };
+
   
+const dragLeave = (event: DragEvent): void => {
+    (event.currentTarget as HTMLElement).classList.remove("drop");
+  };
