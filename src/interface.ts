@@ -39,3 +39,17 @@ export interface DragEventTarget extends EventTarget {
   dataset: DOMStringMap;
   outerHTML: string;
 }
+
+export interface DragAndDropSystem {
+  setData(dataType: string, data: string): void;
+  getData(dataType: string): string;
+  preventDefault(): void;
+}
+
+// dataTransfer: Dieses Objekt ist dafür verantwortlich, Daten zwischen dem "ziehenden" und dem "fallenden" Element während des Drag & Drop-Vorgangs zu übertragen.
+//currentTarget: Die currentTarget-Eigenschaft in der DropEvent-Schnittstelle verweist auf das Element, auf das das gezogene Element "fallen gelassen" wurde
+
+export interface DropEvent extends Event {
+  dataTransfer: DragAndDropSystem;
+  currentTarget: HTMLElement;
+}
