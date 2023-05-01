@@ -201,8 +201,14 @@
     margin-bottom: 1rem;
   }
   
-
+  ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
   
+  li {
+    margin-bottom: 10px;
+  }
   
   
   /* Lists */
