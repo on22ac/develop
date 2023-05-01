@@ -18,6 +18,6 @@ export const liste: Array<ListEintrag> = [
         menge,
       });
     } else {
-      alert(`Bitte ausfüllen`);
+      alert(`Bitte beide Eingabefelder ausfüllen`);
     }
   }
