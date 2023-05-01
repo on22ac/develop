@@ -173,6 +173,12 @@
     margin: 0;
     padding: 0 10px;
   }
+
+  .list-item {
+    font-size: 1.0em;
+    font-weight: normal;
+    /* weitere gewünschte Formatierungen */
+  }
   button:focus,
   button:enabled:hover,
   [role="button"]:focus,
@@ -209,6 +215,8 @@
   li {
     margin-bottom: 10px;
   }
+  
+  
   
   
   /* Lists */

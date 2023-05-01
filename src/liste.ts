@@ -3,8 +3,8 @@ import {inputArtikel, inputMenge } from "./dom-utils";
 
 export const liste: Array<ListEintrag> = [
     {
-      artikel: "Lebensmittel",
-      menge: "Anzahl (entweder als Emojis oder in Stückzahl angeben)",
+      artikel: "",
+      menge: "",
     },
   ];
 
