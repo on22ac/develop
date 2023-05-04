@@ -3,12 +3,12 @@ import { containerAlreadydone, containerTodo, cards } from "./dom-utils";
 
 // fügt einem Element eine CSS-Klasse namens "dragging" hinzu, 
 //um es als gezogenes Element zu kennzeichnen.
-//wenn das Element zum ziehen ausgewählt wird 
+//dragStart: wenn das Element zum ziehen ausgewählt wird 
 const dragStart = (target: DragTarget): void => {
     target.addClass("dragging");
   };
 
-  //wird aufgerufen, wenn der Benutzer das Element loslässt. 
+  //dragEnd: wird aufgerufen, wenn der Benutzer das Element loslässt, wenn Ziehvorgang beendet wird
 // entfernt die CSS-Klasse "dragging" aus dem Element, um es nicht länger als gezogen zu markieren.
 const dragEnd = (target: DragTarget): void => {
     target.removeClass("dragging");
@@ -16,18 +16,18 @@ const dragEnd = (target: DragTarget): void => {
 
 
   // "event" enthält Informationen zum auslösenden Ereignis, wie zum Beispiel welche Maustaste gedrückt wurde,
-//Das Zielobjekt "target" hingegen bezieht sich auf das Element, auf dem das Ereignis ausgelöst wurde.
+//"target" hingegen bezieht sich auf das Element, auf dem das Ereignis ausgelöst wurde.
 
-  // wenn ein gezogenes Element in ein gültiges Drop-Ziel eintritt
+  //dragEnter: wenn ein gezogenes Element in ein gültiges Drop-Ziel eintritt
   const dragEnter = (event: DragEvent): void => {
     (event.currentTarget as HTMLElement).classList.add("drop");
   };
 
-  //wenn ein gezogenes Element ein Drop-Ziel verlässt 
+  //dragLeave: wenn ein gezogenes Element ein Drop-Ziel verlässt 
 const dragLeave = (event: DragEvent): void => {
     (event.currentTarget as HTMLElement).classList.remove("drop");
   };
-//wird während des Ziehvorgangs ausgelöst
+//drag: wird während des Ziehvorgangs ausgelöst, Ereignis wird ausgelöst, wenn ein Element gezogen wird
   const drag = (event: DragEvent): void => {
     const dataTransfer = event.dataTransfer as DataTransfer;
     dataTransfer.setData(
@@ -40,7 +40,7 @@ const dragLeave = (event: DragEvent): void => {
       dataTransfer.setData("text/plain", id);
     }
   };
-  
+  //drop: Ereignis wird ausgelöst, wenn ein Element auf einem gültigen Ablageziel abgelegt wird 
   function drop(event: DragEvent): void {
     const dataTransfer = event.dataTransfer as DataTransfer;
     const id: string = dataTransfer.getData("text/plain");
