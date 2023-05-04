@@ -3,6 +3,7 @@ import { containerAlreadydone, containerTodo, cards } from "./dom-utils";
 
 // fügt einem Element eine CSS-Klasse namens "dragging" hinzu, 
 //um es als gezogenes Element zu kennzeichnen.
+//wenn das Element zum ziehen ausgewählt wird 
 const dragStart = (target: DragTarget): void => {
     target.addClass("dragging");
   };
@@ -13,15 +14,20 @@ const dragEnd = (target: DragTarget): void => {
     target.removeClass("dragging");
   };
 
+
+  // "event" enthält Informationen zum auslösenden Ereignis, wie zum Beispiel welche Maustaste gedrückt wurde,
+//Das Zielobjekt "target" hingegen bezieht sich auf das Element, auf dem das Ereignis ausgelöst wurde.
+
+  // wenn ein gezogenes Element in ein gültiges Drop-Ziel eintritt
   const dragEnter = (event: DragEvent): void => {
     (event.currentTarget as HTMLElement).classList.add("drop");
   };
 
-  
+  //wenn ein gezogenes Element ein Drop-Ziel verlässt 
 const dragLeave = (event: DragEvent): void => {
     (event.currentTarget as HTMLElement).classList.remove("drop");
   };
-
+//wird während des Ziehvorgangs ausgelöst
   const drag = (event: DragEvent): void => {
     const dataTransfer = event.dataTransfer as DataTransfer;
     dataTransfer.setData(
