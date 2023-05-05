@@ -54,6 +54,3 @@ export interface DropEvent extends Event {
   currentTarget: HTMLElement;
 }
 
-export interface DropTarget {
-  removeDropClass(): void;
-}
