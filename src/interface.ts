@@ -25,7 +25,7 @@ export interface DragTarget {
 }
 
 //beschreibt eine Art von Objekt, mit dem man arbeiten kann, wenn man Drag-and-Drop-Funktionen in einer Webanwendung implementiert. 
-//ich benutze es um auf bestimmte um auf bestimmte Eigenschaften eines Elements zuzugreifen
+//ich benutze es um auf bestimmte Eigenschaften eines Elements zuzugreifen
 //Das Interface erweitert ein anderes Interface namens "EventTarget", das grundlegende Funktionen für Ereignisse in Webanwendungen definiert.
 // "DragEventTarget" Interface fügt dieser Basis jedoch einige zusätzliche Eigenschaften hinzu. 
 

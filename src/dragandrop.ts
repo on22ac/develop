@@ -28,11 +28,26 @@ const dragLeave = (event: DragEvent): void => {
     (event.currentTarget as HTMLElement).classList.remove("drop");
   };
 //drag: wird während des Ziehvorgangs ausgelöst, Ereignis wird ausgelöst, wenn ein Element gezogen wird
-  const drag = (event: DragEvent): void => {
+//dataTransfer. Der HTML-Code des gezogenen Elements muss gespeichert werden, damit er im Drop-Handler verwendet werden kann, um das Element an der richtigen Stelle im DOM 
+//zu positionieren oder zu kopieren. Beim Drag-and-Drop von Elementen wird normalerweise das gezogene Element als Kopie an die neue Stelle im DOM verschoben oder kopiert. 
+//Um dies zu erreichen, muss der HTML-Code des gezogenen Elements im DataTransfer-Objekt gespeichert werden, 
+//damit er von der Drop-Funktion ausgelesen und an der gewünschten Stelle im DOM eingefügt werden kann.
+//Das "dataTransfer"-Objekt ist das "Gefäß", in dem die Daten während des Drag & Drop-Vorgangs gespeichert werden.
+
+//setData:  Die "setData"-Methode ist eine Möglichkeit, diese Daten in das "Gefäß" zu schreiben, damit sie später abgerufen werden können.
+// "setData" wird verwendet, um den HTML-Code und die "id" des gezogenen Elements im "dataTransfer"-Objekt zu speichern. 
+//Später können diese Daten dann in der "drop"-Funktion abgerufen werden, um das gezogene Element entsprechend zu manipulieren oder zu platzieren.
+ 
+const drag = (event: DragEvent): void => {
     const dataTransfer = event.dataTransfer as DataTransfer;
     dataTransfer.setData(
       "text/html",
-      (event.currentTarget as HTMLElement).outerHTML
+
+//"text/html:  gibt den Typ der Daten an, die im "dataTransfer"-Objekt gespeichert werden sollen.
+//hier wird HTML-Code des gezogenen Elements als Daten übertragen. Daher wird der Typ der Daten als "text/html" angegeben, um zu signalisieren, dass es sich um HTML-Code handelt.
+// der HTML-Code im "dataTransfer"-Objekt kann als formatierter Text gespeichert wird, der später wieder als HTML-Code verwendet werden kann, wenn das Element abgelegt wird.
+      
+    (event.currentTarget as HTMLElement).outerHTML
     );
     const id: string | undefined = (event.currentTarget as HTMLElement).dataset
       .id;
