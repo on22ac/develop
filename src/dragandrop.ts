@@ -18,15 +18,8 @@ const dragEnd = (target: DragTarget): void => {
   // "event" enthält Informationen zum auslösenden Ereignis, wie zum Beispiel welche Maustaste gedrückt wurde,
 //"target" hingegen bezieht sich auf das Element, auf dem das Ereignis ausgelöst wurde.
 
-  //dragEnter: wenn ein gezogenes Element in ein gültiges Drop-Ziel eintritt
-  const dragEnter = (event: DragEvent): void => {
-    (event.currentTarget as HTMLElement).classList.add("drop");
-  };
+ 
 
-  //dragLeave: wenn ein gezogenes Element ein Drop-Ziel verlässt 
-const dragLeave = (event: DragEvent): void => {
-    (event.currentTarget as HTMLElement).classList.remove("drop");
-  };
 //drag: wird während des Ziehvorgangs ausgelöst, Ereignis wird ausgelöst, wenn ein Element gezogen wird
 //dataTransfer. Der HTML-Code des gezogenen Elements muss gespeichert werden, damit er im Drop-Handler verwendet werden kann, um das Element an der richtigen Stelle im DOM 
 //zu positionieren oder zu kopieren. Beim Drag-and-Drop von Elementen wird normalerweise das gezogene Element als Kopie an die neue Stelle im DOM verschoben oder kopiert. 

@@ -54,7 +54,7 @@ html {
 }
 
 .column.drop {
-    border: 2px dashed #cc3f3f;
+    border: 10px dashed #cc3f3f;
 }
 
 .column.drop article {
